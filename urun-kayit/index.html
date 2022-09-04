@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ürün Kayıt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="product-form">
+    <label>Ad soyad:</label>
+    <input type="text" name="own-name" id="own-name">
+    <br><br>
+    <label>Ürün Kodu:</label>
+    <input type="text" name="code" id="code">
+    <br><br>
+    <label>Alet Adı:</label>
+    <input type="text" name="product-name" id="product-name">
+    <br> <br>
+    <label>Teslim alınan/verilen adet</label>
+    <input type="text" name="piece" id="piece">
+    <br><br>
+    <label>Tarih</label>
+    <input type="date" name="date" id="date">
+    <br><br>
+    <label>Sıra No</label>
+    <input type="text" name="serial-number" id="serial-number">
+    <br><br>
+    <fieldset>
+      <input type="radio" name="status" id="recieved" value="teslim alındı">
+      <label>Ürünü Teslim Aldım</label>
+      <input type="radio" name="status" id="delivered" value="teslim edildi">
+      <label>Ürünü Teslim Ettim</label>
+    </fieldset>
+    <br><br>
+    <button id="send">Gönder</button>
+    <button id="reset">Sıfırla</button>
+  </div>
+  <div id="records"></div>
+  <script src="main.js"></script>
+</body>
+</html>
