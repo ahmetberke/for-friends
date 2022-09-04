@@ -15,11 +15,15 @@ window.addEventListener('load', function(){
   sendButton.addEventListener('click', function(){
     // her gönderme butonuna tıklandığında eski hata mesajalrını siliyoruz.
     resetError();
-    let status = document.querySelector('input[name="status"]:checked').value;
-    if (validation(ownNameInput.value, productCodeInput.value, productNameInput.value, pieceInput.value, dateInput.value, serialNumberInput.value, status)){
-      newRecord(ownNameInput.value, productCodeInput.value, productNameInput.value, pieceInput.value, dateInput.value, serialNumberInput.value, status);
-    }else {
+    let status = document.querySelector('input[name="status"]:checked');
+    if (status == null) {
       errorHandle("Lütfen tüm alanları doldurun");
+    }else {
+      if (validation(ownNameInput.value, productCodeInput.value, productNameInput.value, pieceInput.value, dateInput.value, serialNumberInput.value, status)){
+        newRecord(ownNameInput.value, productCodeInput.value, productNameInput.value, pieceInput.value, dateInput.value, serialNumberInput.value, status);
+      }else {
+        errorHandle("Lütfen tüm alanları doldurun");
+      }
     }
   }); 
   // reset butonu tıklanınca aşağıdaki fonksiyon çalışır.
@@ -59,7 +63,6 @@ function errorHandle(text) {
 function resetError() {
   let errors = productForm.getElementsByClassName("error")
   for (var i=0; i<errors.length; i++) {
-    console.log(errors[i]);
     productForm.removeChild(errors[i]);
   }
 }
